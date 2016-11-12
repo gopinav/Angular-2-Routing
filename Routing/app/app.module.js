@@ -10,14 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
+var department_list_component_1 = require('./department-list.component');
+var employee_list_component_1 = require('./employee-list.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
+            imports: [
+                platform_browser_1.BrowserModule,
+                router_1.RouterModule.forRoot([
+                    { path: 'departments', component: department_list_component_1.DepartmentListComponent },
+                    { path: 'employees', component: employee_list_component_1.EmployeeListComponent }
+                ])
+            ],
+            declarations: [app_component_1.AppComponent, department_list_component_1.DepartmentListComponent, employee_list_component_1.EmployeeListComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

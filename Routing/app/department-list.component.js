@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var DepartmentListComponent = (function () {
+    function DepartmentListComponent() {
     }
-    AppComponent = __decorate([
+    DepartmentListComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Routing Application</h1>\n              <nav>\n                <a routerLink=\"/departments\" routerLinkActive=\"active\">Departments</a>\n                <a routerLink=\"/employees\" routerLinkActive=\"active\">Employees</a>\n              </nav>              \n              <router-outlet></router-outlet>\n  "
+            selector: 'department-list',
+            template: '<h3>Department List</h3>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], DepartmentListComponent);
+    return DepartmentListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.DepartmentListComponent = DepartmentListComponent;
+//# sourceMappingURL=department-list.component.js.map

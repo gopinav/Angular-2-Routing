@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var EmployeeListComponent = (function () {
+    function EmployeeListComponent() {
     }
-    AppComponent = __decorate([
+    EmployeeListComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Routing Application</h1>\n              <nav>\n                <a routerLink=\"/departments\" routerLinkActive=\"active\">Departments</a>\n                <a routerLink=\"/employees\" routerLinkActive=\"active\">Employees</a>\n              </nav>              \n              <router-outlet></router-outlet>\n  "
+            selector: 'employee-list',
+            template: '<h3>Employee List</h3>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], EmployeeListComponent);
+    return EmployeeListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.EmployeeListComponent = EmployeeListComponent;
+//# sourceMappingURL=employee-list.component.js.map
