@@ -84,6 +84,7 @@ nav a.active {
   background-color: #BBD8DC;
   color: white;
 }
+
 .items .text {
   position: relative;
   top: -3px;
@@ -114,7 +115,10 @@ nav a.active {
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
-
+.items li.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
 /* everywhere else */
 * { 
   font-family: Arial, Helvetica, sans-serif; 

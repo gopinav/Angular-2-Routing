@@ -35,9 +35,13 @@ var DepartmentDetailComponent = (function () {
         var nextId = this.departmentId + 1;
         this.router.navigate(['/department', nextId]);
     };
+    DepartmentDetailComponent.prototype.gotoDepartments = function () {
+        var selectedId = this.departmentId ? this.departmentId : null;
+        this.router.navigate(['/departments', { id: selectedId }]);
+    };
     DepartmentDetailComponent = __decorate([
         core_1.Component({
-            template: "<h3>You selected department with id = {{departmentId}}</h3>\n             <a (click)=\"goPrevious()\">Previous</a>\n             <a (click)=\"goNext()\">Next</a>\n  "
+            template: "<h3>You selected department with id = {{departmentId}}</h3>\n             <a (click)=\"goPrevious()\">Previous</a>\n             <a (click)=\"goNext()\">Next</a>\n             <p>\n              <button (click)=\"gotoDepartments()\">Back</button>\n             </p>\n  "
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], DepartmentDetailComponent);

@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var DepartmentListComponent = (function () {
-    function DepartmentListComponent(router) {
+    function DepartmentListComponent(route, router) {
+        this.route = route;
         this.router = router;
         this.departments = [
             { "id": 1, "name": "Angular" },
@@ -21,15 +22,23 @@ var DepartmentListComponent = (function () {
             { "id": 5, "name": "Bootstrap" }
         ];
     }
+    DepartmentListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            var id = parseInt(params['id']);
+            _this.selectedId = id;
+        });
+    };
+    DepartmentListComponent.prototype.isSelected = function (department) { return department.id === this.selectedId; };
     DepartmentListComponent.prototype.onSelect = function (department) {
         this.router.navigate(['/department', department.id]);
     };
     DepartmentListComponent = __decorate([
         core_1.Component({
             selector: 'department-list',
-            template: "<h3>Department List</h3>\n             <ul class=\"items\">\n                <li *ngFor=\"let department of departments\" (click)=\"onSelect(department)\">\n                   <span class=\"badge\">{{department.id}}</span> {{department.name}}\n                </li>\n             </ul>\n  "
+            template: "<h3>Department List</h3>\n             <ul class=\"items\">\n                <li *ngFor=\"let department of departments\" [class.selected]=\"isSelected(department)\" (click)=\"onSelect(department)\">\n                   <span class=\"badge\">{{department.id}}</span> {{department.name}}\n                </li>\n             </ul>\n  "
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], DepartmentListComponent);
     return DepartmentListComponent;
 }());
