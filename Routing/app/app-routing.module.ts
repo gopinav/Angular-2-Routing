@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DepartmentListComponent } from './department-list.component';
 import { EmployeeListComponent } from './employee-list.component';
+import { DepartmentDetailComponent } from './department-detail.component';
 
 const routes: Routes = [
       { path: 'departments', component: DepartmentListComponent },
-      { path: 'employees', component: EmployeeListComponent }
+      { path: 'employees', component: EmployeeListComponent },
+      { path: 'department/:id', component: DepartmentDetailComponent }
     ]
 
 @NgModule({
@@ -19,4 +21,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 
-export const routingComponents = [DepartmentListComponent, EmployeeListComponent];
+export const routingComponents = [DepartmentListComponent, EmployeeListComponent, DepartmentDetailComponent];

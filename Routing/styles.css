@@ -62,8 +62,8 @@ nav a.active {
 .items {
   margin: 0 0 2em 0;
   list-style-type: none;
-  padding: 0;
-  width: 24em;
+  padding-left: 0;
+  width: 8em;
 }
 .items li {
   cursor: pointer;
@@ -71,7 +71,7 @@ nav a.active {
   left: 0;
   background-color: #EEE;
   margin: .5em;
-  padding: .3em 0;
+  padding: .3em;
   height: 1.6em;
   border-radius: 4px;
 }
@@ -87,40 +87,19 @@ nav a.active {
 .items .text {
   position: relative;
   top: -3px;
-}
-.items {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 24em;
-}
-.items li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
-}
-.items li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-.items li.selected {
-  background-color: #CFD8DC;
-  color: white;
 }
 
-.items li.selected:hover {
-  background-color: #BBD8DC;
-}
-.items .text {
+.items li {
+  cursor: pointer;
   position: relative;
-  top: -3px;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em;
+  height: 1.6em;
+  border-radius: 4px;
 }
+
 .items .badge {
   display: inline-block;
   font-size: small;

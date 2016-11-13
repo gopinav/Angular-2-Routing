@@ -9,15 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var DepartmentListComponent = (function () {
-    function DepartmentListComponent() {
+    function DepartmentListComponent(router) {
+        this.router = router;
+        this.departments = [
+            { "id": 1, "name": "Angular" },
+            { "id": 2, "name": "Node" },
+            { "id": 3, "name": "MongoDB" },
+            { "id": 4, "name": "Ruby" },
+            { "id": 5, "name": "Bootstrap" }
+        ];
     }
+    DepartmentListComponent.prototype.onSelect = function (department) {
+        this.router.navigate(['/department', department.id]);
+    };
     DepartmentListComponent = __decorate([
         core_1.Component({
             selector: 'department-list',
-            template: '<h3>Department List</h3>'
+            template: "<h3>Department List</h3>\n             <ul class=\"items\">\n                <li *ngFor=\"let department of departments\" (click)=\"onSelect(department)\">\n                  {{department.name}}\n                </li>\n             </ul>\n  "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router])
     ], DepartmentListComponent);
     return DepartmentListComponent;
 }());
