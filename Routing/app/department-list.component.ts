@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   template: `<h3>Department List</h3>
              <ul class="items">
                 <li *ngFor="let department of departments" (click)="onSelect(department)">
-                  {{department.name}}
+                   <span class="badge">{{department.id}}</span> {{department.name}}
                 </li>
              </ul>
   `

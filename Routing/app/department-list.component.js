@@ -27,7 +27,7 @@ var DepartmentListComponent = (function () {
     DepartmentListComponent = __decorate([
         core_1.Component({
             selector: 'department-list',
-            template: "<h3>Department List</h3>\n             <ul class=\"items\">\n                <li *ngFor=\"let department of departments\" (click)=\"onSelect(department)\">\n                  {{department.name}}\n                </li>\n             </ul>\n  "
+            template: "<h3>Department List</h3>\n             <ul class=\"items\">\n                <li *ngFor=\"let department of departments\" (click)=\"onSelect(department)\">\n                   <span class=\"badge\">{{department.id}}</span> {{department.name}}\n                </li>\n             </ul>\n  "
         }), 
         __metadata('design:paramtypes', [router_1.Router])
     ], DepartmentListComponent);

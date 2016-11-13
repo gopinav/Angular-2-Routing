@@ -63,7 +63,7 @@ nav a.active {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding-left: 0;
-  width: 8em;
+  width: 10em;
 }
 .items li {
   cursor: pointer;

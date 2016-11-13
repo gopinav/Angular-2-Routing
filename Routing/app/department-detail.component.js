@@ -9,14 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var DepartmentDetailComponent = (function () {
-    function DepartmentDetailComponent() {
+    function DepartmentDetailComponent(route) {
+        this.route = route;
     }
+    DepartmentDetailComponent.prototype.ngOnInit = function () {
+        var id = parseInt(this.route.snapshot.params['id']);
+        this.departmentId = id;
+    };
     DepartmentDetailComponent = __decorate([
         core_1.Component({
-            template: "<h3>You selected department with id =</h3>\n            \n  "
+            template: "<h3>You selected department with id = {{departmentId}}</h3>\n            \n  "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute])
     ], DepartmentDetailComponent);
     return DepartmentDetailComponent;
 }());
