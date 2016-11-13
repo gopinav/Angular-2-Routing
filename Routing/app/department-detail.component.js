@@ -11,18 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var DepartmentDetailComponent = (function () {
-    function DepartmentDetailComponent(route) {
+    function DepartmentDetailComponent(route, router) {
         this.route = route;
+        this.router = router;
     }
+    /*ngOnInit() {
+      let id = parseInt(this.route.snapshot.params['id']);
+      this.departmentId = id;
+    }*/
     DepartmentDetailComponent.prototype.ngOnInit = function () {
-        var id = parseInt(this.route.snapshot.params['id']);
-        this.departmentId = id;
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            var id = parseInt(params['id']);
+            _this.departmentId = id;
+        });
+    };
+    DepartmentDetailComponent.prototype.goPrevious = function () {
+        var previousId = this.departmentId - 1;
+        this.router.navigate(['/department', previousId]);
+    };
+    DepartmentDetailComponent.prototype.goNext = function () {
+        console.log('Clicked next');
+        var nextId = this.departmentId + 1;
+        this.router.navigate(['/department', nextId]);
     };
     DepartmentDetailComponent = __decorate([
         core_1.Component({
-            template: "<h3>You selected department with id = {{departmentId}}</h3>\n            \n  "
+            template: "<h3>You selected department with id = {{departmentId}}</h3>\n             <a (click)=\"goPrevious()\">Previous</a>\n             <a (click)=\"goNext()\">Next</a>\n  "
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], DepartmentDetailComponent);
     return DepartmentDetailComponent;
 }());
