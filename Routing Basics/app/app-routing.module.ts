@@ -4,11 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { DepartmentListComponent } from './department-list.component';
 import { EmployeeListComponent } from './employee-list.component';
 import { DepartmentDetailComponent } from './department-detail.component';
+import { HomeComponent } from './home.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
 const routes: Routes = [
+      
       { path: 'departments', component: DepartmentListComponent },
       { path: 'employees', component: EmployeeListComponent },
-      { path: 'department/:id', component: DepartmentDetailComponent }
+      { path: 'department/:id', component: DepartmentDetailComponent },
+      { path: '', component: HomeComponent},
+      { path: '**', component: PageNotFoundComponent}
+      
     ]
 
 @NgModule({
@@ -21,4 +27,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 
-export const routingComponents = [DepartmentListComponent, EmployeeListComponent, DepartmentDetailComponent];
+export const routingComponents = [HomeComponent, PageNotFoundComponent, DepartmentListComponent, EmployeeListComponent, DepartmentDetailComponent];
