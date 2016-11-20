@@ -38,6 +38,8 @@ var DepartmentDetailComponent = (function () {
     DepartmentDetailComponent.prototype.gotoDepartments = function () {
         var selectedId = this.departmentId ? this.departmentId : null;
         this.router.navigate(['/departments', { id: selectedId }]);
+        // Relative Path
+        // this.router.navigate(['../', {id: selectedId}], { relativeTo: this.route });
     };
     DepartmentDetailComponent = __decorate([
         core_1.Component({

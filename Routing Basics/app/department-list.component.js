@@ -31,7 +31,9 @@ var DepartmentListComponent = (function () {
     };
     DepartmentListComponent.prototype.isSelected = function (department) { return department.id === this.selectedId; };
     DepartmentListComponent.prototype.onSelect = function (department) {
-        this.router.navigate(['/department', department.id]);
+        this.router.navigate(['/departments', department.id]);
+        // Relative Path
+        // this.router.navigate([department.id], { relativeTo: this.route });
     };
     DepartmentListComponent = __decorate([
         core_1.Component({

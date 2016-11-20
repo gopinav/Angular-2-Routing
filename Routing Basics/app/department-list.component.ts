@@ -32,6 +32,9 @@ export class DepartmentListComponent {
   isSelected(department) { return department.id === this.selectedId; }
 
   onSelect(department) {
-    this.router.navigate(['/department', department.id]);
+    this.router.navigate(['/departments', department.id]);
+   // Relative Path
+   // this.router.navigate([department.id], { relativeTo: this.route });
+    
   }
 }

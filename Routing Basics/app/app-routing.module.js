@@ -16,10 +16,10 @@ var department_detail_component_1 = require('./department-detail.component');
 var home_component_1 = require('./home.component');
 var page_not_found_component_1 = require('./page-not-found.component');
 var routes = [
-    { path: 'departments', component: department_list_component_1.DepartmentListComponent },
+    { path: '', redirectTo: '/departmentsList', pathMatch: 'full' },
+    { path: 'departmentsList', component: department_list_component_1.DepartmentListComponent },
     { path: 'employees', component: employee_list_component_1.EmployeeListComponent },
-    { path: 'department/:id', component: department_detail_component_1.DepartmentDetailComponent },
-    { path: '', component: home_component_1.HomeComponent },
+    { path: 'departmentsList/:id', component: department_detail_component_1.DepartmentDetailComponent },
     { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = (function () {
